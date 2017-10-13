@@ -90,7 +90,7 @@ $('.dropify').dropify({
                         columns: "thead th:not(.noExport)"
                     }
                 },
-                {  
+                {
                      extend: 'excel',
                     title: 'SEMANAS 2017 - EXCEL - '+ moment().format('DD/MM/YYYY HH:mm:ss') + ' - '+$('.box-title').html(),
                     exportOptions: {
@@ -149,7 +149,7 @@ $('.dropify').dropify({
                         columns: "thead th:not(.noExport)"
                     }
                 },
-                {  
+                {
                      extend: 'excel',
                     title: 'SEMANAS 2017 - EXCEL - '+ moment().format('DD/MM/YYYY HH:mm:ss') + ' - '+$('.title_1').html(),
                     exportOptions: {
@@ -167,7 +167,7 @@ $('.dropify').dropify({
               ]
     });
 
-    
+
     var table =  $('#table_ecej_rooms').DataTable({
         "columnDefs": [
             { "visible": false, "targets": 1 }
@@ -207,13 +207,13 @@ $('.dropify').dropify({
             var api = this.api();
             var rows = api.rows( {page:'current'} ).nodes();
             var last=null;
- 
+
             api.column(1, {page:'current'} ).data().each( function ( group, i ) {
                 if ( last !== group ) {
                     $(rows).eq( i ).before(
                         '<tr class="group"><td colspan="5">'+group+'</td></tr>'
                     );
- 
+
                     last = group;
                 }
             } );
@@ -227,7 +227,7 @@ $('.dropify').dropify({
                         columns: "thead th:not(.noExport)"
                     }
                 },
-                {  
+                {
                      extend: 'excel',
                     title: 'SEMANAS 2017 - EXCEL - '+ moment().format('DD/MM/YYYY HH:mm:ss') + ' - '+$('.box-title').html(),
                     exportOptions: {
@@ -257,7 +257,7 @@ $('.dropify').dropify({
     } );
     table.order( [ 1, 'asc' ] ).draw();
 
-   
+
 
 
     dataConfirmModal.setDefaults({
@@ -289,7 +289,7 @@ $('#birthday_picker').daterangepicker({
 
     singleDatePicker: true,
     showDropdowns: true,
-    startDate: moment().subtract(22, 'years'),
+    startDate: moment().subtract(17, 'years'),
     autoUpdateInput: false
 
 }, function(chosen_date) {
@@ -332,7 +332,7 @@ function change_payment_parts(sel, price){
     //     console.log(price_nohost_checked);
     //     $('#price_js').html((price_nohost_checked + (0.00*(partions-1))).toFixed(2));
     // }
-    
+
 
     // // if (partions >= 1) {
     // //     txt += '<div class="radio"><label>';
@@ -404,7 +404,7 @@ function change_payment_nohost(sel, price){
     var txt_parcelas = '';
     var new_price = (price + (0.00*(partions-1)));
     $('#price_js').html(new_price.toFixed(2));
-    
+
     txt_parcelas += '<div class="radio"><label>';
     txt_parcelas += '<b>Parcelas: </b>'+ partions + ' x ' + (new_price / partions).toFixed(2);
     txt_parcelas += '</label>';
@@ -522,7 +522,7 @@ if ($("#edit_user_form").length) {
 
 function popitup(url) {
     //newwindow=window.open(url,'Tire sua dúvida - SEMANAS 2017','height=500,width=500');
-    newwindow = window.open(url, 'Tire sua dúvida','height=500,width=500'); 
+    newwindow = window.open(url, 'Tire sua dúvida','height=500,width=500');
     if (window.focus) {newwindow.focus()}
     return false;
 }
@@ -543,6 +543,3 @@ $('body').on('shown.bs.modal', function () {
 
 
 });
-
-
-
